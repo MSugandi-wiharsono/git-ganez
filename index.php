@@ -6,7 +6,9 @@ require('./propertyconstant.php');
 use pbo\marketplace\produk;
 
 //object
- $produk = new produk('P0001','laptop',10000000,5);
+ $produk = new produk();
+
+ $produk->setkode('P0001')->setnama('laptop')->setharga('10000000')->setstok('5');
 
   // hitung PAJAK
   //$pajak = produk::PAJAK * 100;
@@ -17,16 +19,16 @@ use pbo\marketplace\produk;
 
 
   //hasil 
-echo "produk: ". $produk->nama;
-echo "<br>";
+echo "produk: ". $produk->getnama();
+echo "<br/>";
 
-echo "harga: ". $produk->harga;
-echo "<br>";
+echo "harga: ". $produk->getharga();
+echo "<br/>";
 
-echo "stok: ". $produk->stok;
-echo "<br>";
+echo "stok: ". $produk->getstok();
+echo "<br/>";
 
 echo "pajak: ". $produk->pajak()."%";
-echo "<br>";
+echo "<br/>";
 
 echo "total harga setelah pajak: rp". $produk->total();
